@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AnalyseDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./AnalyseDoc.xsd">
+    <SearchText searchType="regex" matchCase="true" bgColor="green" comment="Service is starting">AlteryxService starting version</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="bad">ERROR</SearchText>
+    <SearchText searchType="regex" matchCase="true" bgColor="veryLitePurple" comment="LastStartupError">AlteryxService_LogStartupError</SearchText>
+    <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="bad things with mongo">MongoDaemon_Ping_Failed</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="Loading values from RuntimeSettings">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="If False, they are using the Embedded Mongo (this is the norm)">Setting root &lt;Controller&gt; name &lt;MongoDBEnabled&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using a different service port">ServicePort.+value.{2}(?!80)</SearchText>
+</AnalyseDoc>

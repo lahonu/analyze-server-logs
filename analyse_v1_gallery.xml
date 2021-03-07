@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AnalyseDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./AnalyseDoc.xsd">
+    <SearchText searchType="regex" matchCase="true" bgColor="green" comment="Service is starting">AlteryxService starting version</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="bad">ERROR</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="red" comment="bad">FATAL</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Will disable the schedule mentioned on this line">OwnerApplicationAccessRevoked</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="darkYellow" comment="Active Directory related errors">(WARN|ERROR).+ActiveDirectory</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="litePink" comment="may not be relevant">The package requires chunks that are missing</SearchText>
+    <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="bad things with mongo">MongoDaemon_Ping_Failed</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="Gallery is enabled/disabled">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="Run At a Lower Priority is not checked (this is generally advised to be checked)">Setting root &lt;Worker&gt; name &lt;RunAtLowerPriority&gt; value &lt;False&gt;</SearchText>
+</AnalyseDoc>
