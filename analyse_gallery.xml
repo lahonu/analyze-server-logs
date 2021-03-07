@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AnalyseDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./AnalyseDoc.xsd">
-    <SearchText searchType="regex" matchCase="true" bgColor="green" comment="Service is starting">AlteryxService starting version</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="bad">ERROR</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="red" comment="bad">FATAL</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Will disable the schedule mentioned on this line">OwnerApplicationAccessRevoked</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="darkYellow" comment="Active Directory related errors">(WARN|ERROR).+ActiveDirectory</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="litePink" comment="may not be relevant">The package requires chunks that are missing</SearchText>
-    <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="bad things with mongo">MongoDaemon_Ping_Failed</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="Gallery is enabled/disabled">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt;</SearchText>
-    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="Run At a Lower Priority is not checked (this is generally advised to be checked)">Setting root &lt;Worker&gt; name &lt;RunAtLowerPriority&gt; value &lt;False&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" select="text" bgColor="green" comment="Gallery Service is starting" group="Information">Starting cloud services</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" group="General Errors">ERROR</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Warnings, but filters out missing image file warnings" group="General Errors">WARN((?!.(png|gif),404).)*$</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="red" comment="Critical error." group="General Errors">FATAL</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="veryLitePurple" comment="Critical error." group="General Errors">FATAL.+lock obtained</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Will disable the schedule mentioned on this line" group="Commonly encountered errors">OwnerApplicationAccessRevoked</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="User trying to sign in already has an email that matches in the database" group="Commonly encountered errors">Alteryx.Cloud.Common.Exceptions.BadRequestException: Specified email already exists.</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="darkYellow" comment="Active Directory related errors" group="Commonly encountered errors">(WARN|ERROR).+ActiveDirectory</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="litePink" comment="When uploading a workflow, the package failed to upload all required chunks and could cause problems in the future with that particular application. May not be relevant." group="Commonly encountered errors">The package requires chunks that are missing</SearchText>
+    <SearchText searchType="regex" bgColor="veryLitePurple" comment="Underlying schema version needs to be updated." group="Information">Database requires migration from \d* to \d*</SearchText>
+    <SearchText searchType="regex" bgColor="veryLitePurple" comment="Underlying schema version migration is in progress." group="Information">The system is currently undergoing maintenance. Please try your request again later</SearchText>
 </AnalyseDoc>

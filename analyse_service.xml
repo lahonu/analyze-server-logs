@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AnalyseDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./AnalyseDoc.xsd">
-    <SearchText searchType="regex" matchCase="true" bgColor="green" comment="Service is starting">AlteryxService starting version</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="bad">ERROR</SearchText>
-    <SearchText searchType="regex" matchCase="true" bgColor="veryLitePurple" comment="LastStartupError">AlteryxService_LogStartupError</SearchText>
-    <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="bad things with mongo">MongoDaemon_Ping_Failed</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="Loading values from RuntimeSettings">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt;</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="If False, they are using the Embedded Mongo (this is the norm)">Setting root &lt;Controller&gt; name &lt;MongoDBEnabled&gt;</SearchText>
-    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using a service port other than the default (port 80 is default)">ServicePort.+value.{2}(?!80).*&gt;</SearchText>
-    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using an embedded mongo database">Setting root &lt;Controller&gt; name &lt;EmbeddedMongoDBEnabled&gt; value &lt;True&gt;</SearchText>
-    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="Run At a Lower Priority is not checked (this is generally advised to be checked)">Setting root &lt;Worker&gt; name &lt;RunAtLowerPriority&gt; value &lt;False&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" select="text" bgColor="green" comment="Service is starting" group="Informational">AlteryxService starting version &lt;\d+[\d\.]+&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Error" group="General Errors">ERROR</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="red" comment="Critical Error" group="General Errors">FATAL</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Gallery ping failed" group="General Errors">GalleryDaemon_Ping_Failed: Response code &lt;\d+&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" bgColor="veryLitePurple" comment="LastStartupError" group="General Errors">AlteryxService_LogStartupError</SearchText>
+    <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="Mongo ping failed" group="General Errors">MongoDaemon_Ping_Failed</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" select="text" color="deepPurple" comment="Service is shutting down" group="General Errors">ServicePoolController_Shutdown_Stop: Stopping plugin &lt;.+&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" select="text" color="white" bgColor="liteGrey" comment="Gallery is enabled" group="RuntimeSettings config">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt; value &lt;True&gt;</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" select="text" color="purple" bgColor="liteGrey" comment="They are using a User-Managed mongo" group="RuntimeSettings config">Setting root &lt;Controller&gt; name &lt;MongoDBEnabled&gt; value &lt;True&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using a service port other than the default (port 80 is default)" group="RuntimeSettings config">ServicePort.+value.{2}(?!80).*&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="white" bgColor="liteGrey" comment="They are using an embedded mongo database" group="RuntimeSettings config">Setting root &lt;Controller&gt; name &lt;EmbeddedMongoDBEnabled&gt; value &lt;True&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="Run At a Lower Priority is not checked (this is generally advised to be checked)" group="RuntimeSettings config">Setting root &lt;Worker&gt; name &lt;RunAtLowerPriority&gt; value &lt;False&gt;</SearchText>
 </AnalyseDoc>
