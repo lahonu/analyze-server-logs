@@ -6,5 +6,7 @@
     <SearchText matchCase="true" wholeWord="true" color="deepPurple" comment="bad things with mongo">MongoDaemon_Ping_Failed</SearchText>
     <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="Loading values from RuntimeSettings">Setting root &lt;Controller&gt; name &lt;GalleryEnabled&gt;</SearchText>
     <SearchText searchType="regex" matchCase="true" wholeWord="true" color="white" bgColor="liteGrey" comment="If False, they are using the Embedded Mongo (this is the norm)">Setting root &lt;Controller&gt; name &lt;MongoDBEnabled&gt;</SearchText>
-    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using a different service port">ServicePort.+value.{2}(?!80)</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using a service port other than the default (port 80 is default)">ServicePort.+value.{2}(?!80).*&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="They are using an embedded mongo database">Setting root &lt;Controller&gt; name &lt;EmbeddedMongoDBEnabled&gt; value &lt;True&gt;</SearchText>
+    <SearchText searchType="regex" select="text" color="purple" bgColor="liteGrey" comment="Run At a Lower Priority is not checked (this is generally advised to be checked)">Setting root &lt;Worker&gt; name &lt;RunAtLowerPriority&gt; value &lt;False&gt;</SearchText>
 </AnalyseDoc>
