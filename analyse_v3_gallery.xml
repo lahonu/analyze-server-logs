@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AnalyseDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./AnalyseDoc.xsd">
     <SearchText searchType="regex" matchCase="true" select="text" bgColor="green" comment="Gallery Service is starting" group="Information">Starting cloud services</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" group="General Errors">ERROR</SearchText>
-    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Warnings, but filters out missing image file warnings" group="General Errors">WARN((?!.(png|gif),404).)*$</SearchText>
+    <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="bad" group="General Errors">ERROR</SearchText>
     <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="red" comment="Critical error." group="General Errors">FATAL</SearchText>
     <SearchText searchType="regex" matchCase="true" wholeWord="true" bgColor="veryLitePurple" comment="Critical error." group="General Errors">FATAL.+lock obtained</SearchText>
     <SearchText searchType="regex" matchCase="true" wholeWord="true" color="red" comment="Will disable the schedule mentioned on this line" group="Commonly encountered errors">OwnerApplicationAccessRevoked</SearchText>
